@@ -292,7 +292,6 @@ return {
         "aaditeynair/termnames.nvim",
         cmd = { "TermOpen", "TermRename", "TermClose", "TermRefresh", "TermSave" },
     },
-    -- { dir = "~/Current/termnames-neovim-plugin-march-2023", event = "VeryLazy" },
 
     {
         "folke/trouble.nvim",
