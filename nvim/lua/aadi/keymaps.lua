@@ -1,5 +1,5 @@
 local function remap(mode, map, cmd)
-	vim.keymap.set(mode, map, cmd, { silent = true })
+    vim.keymap.set(mode, map, cmd, { silent = true })
 end
 
 -- easier keys to return to normal mode
@@ -8,8 +8,8 @@ remap("t", "jk", "<C-\\><C-n>")
 
 -- remove any clutter
 remap({ "n", "i" }, "<ESC>", function()
-	vim.cmd.nohl()
-	vim.cmd.echo()
+    vim.cmd.nohl()
+    vim.cmd.echo()
 end)
 
 -- misc
@@ -18,8 +18,8 @@ remap("n", "<leader>q", "<CMD>Bdelete<CR>")
 
 -- sidebar toggles
 remap("n", "<leader>w", function()
-	vim.cmd("Neotree close")
-	vim.cmd("SidebarNvimToggle")
+    vim.cmd("Neotree close")
+    vim.cmd("SidebarNvimToggle")
 end)
 remap("n", "<leader>e", "<CMD>Neotree focus reveal toggle<CR>")
 remap("n", "<leader>u", "<CMD>UndotreeToggle<CR>")
