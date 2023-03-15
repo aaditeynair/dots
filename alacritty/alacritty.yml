@@ -1,0 +1,27 @@
+import:
+  - /home/aadi/.config/alacritty/themes/gruvbox.yaml
+
+font:
+  normal:
+    family: FiraCode NF
+    style: Regular
+
+  bold:
+    family: FiraCode NF
+    style: Bold
+
+  italic:
+    family: FiraCode NF
+    style: Italic
+
+  bold_italic:
+    family: FiraCode NF
+    style: Bold Italic
+
+  size: 8
+
+window:
+  padding:
+    x: 10
+    y: 10
+  opacity: 0

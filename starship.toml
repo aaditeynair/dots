@@ -1,0 +1,15 @@
+format = """$directory$git_branch
+$character"""
+
+[character]
+success_symbol = "[>>>](bold bright-cyan)"
+error_symbol = "[>>>](bold red)"
+
+[directory]
+read_only = " "
+style = "bold cyan"
+truncate_to_repo = false
+
+[git_branch]
+symbol = " "
+style = "bold green"
