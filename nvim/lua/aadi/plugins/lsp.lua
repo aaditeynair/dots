@@ -155,6 +155,8 @@ return {
             local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
             local nls = require("null-ls")
 
+            local format_on_save = true
+
             nls.setup({
                 sources = {
                     nls.builtins.formatting.black,
@@ -168,18 +170,25 @@ return {
                             group = augroup,
                             buffer = bufnr,
                             callback = function()
-                                vim.lsp.buf.format({
-                                    filter = function(client)
-                                        --  only use null-ls for formatting instead of lsp server
-                                        return client.name == "null-ls"
-                                    end,
-                                    bufnr = bufnr,
-                                })
+                                if format_on_save then
+                                    vim.lsp.buf.format({
+                                        filter = function(client)
+                                            --  only use null-ls for formatting instead of lsp server
+                                            return client.name == "null-ls"
+                                        end,
+                                        bufnr = bufnr,
+                                    })
+                                end
                             end,
                         })
                     end
                 end,
             })
+
+            vim.api.nvim_create_user_command("ToggleFormatOnSave", function()
+                format_on_save = not format_on_save
+                print("Format on save is turned " .. ( format_on_save and "on" or "off" ))
+            end, { nargs = 0 })
         end,
     },
 }
