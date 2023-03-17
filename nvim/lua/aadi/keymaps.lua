@@ -29,7 +29,8 @@ remap("n", "<leader>o", "mzo<Esc>`z")
 remap("n", "<leader>O", "mzO<Esc>`z")
 
 -- sessions
-remap("n", "<leader>rs", "<CMD>PossessionLoad<CR>")
+remap("n", "<leader>sr", "<CMD>PossessionLoad<CR>")
+remap("n", "<leader>sl", "<CMD>SLoadCwd<CR>")
 remap("n", "<leader>ss", "<CMD>Telescope possession list<CR>")
 
 -- better navigation

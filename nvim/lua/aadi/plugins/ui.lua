@@ -25,21 +25,21 @@ return {
                 "",
                 "",
                 "",
-                "██╗       ██╗███████╗██╗      █████╗  █████╗ ███╗   ███╗███████╗   █████╗  █████╗ ██████╗ ██╗",
-                "██║  ██╗  ██║██╔════╝██║     ██╔══██╗██╔══██╗████╗ ████║██╔════╝  ██╔══██╗██╔══██╗██╔══██╗██║",
-                "╚██╗████╗██╔╝█████╗  ██║     ██║  ╚═╝██║  ██║██╔████╔██║█████╗    ███████║███████║██║  ██║██║",
-                " ████╔═████║ ██╔══╝  ██║     ██║  ██╗██║  ██║██║╚██╔╝██║██╔══╝    ██╔══██║██╔══██║██║  ██║██║",
-                " ╚██╔╝ ╚██╔╝ ███████╗███████╗╚█████╔╝╚█████╔╝██║ ╚═╝ ██║███████╗  ██║  ██║██║  ██║██████╔╝██║",
-                "  ╚═╝   ╚═╝  ╚══════╝╚══════╝ ╚════╝  ╚════╝ ╚═╝     ╚═╝╚══════╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝",
+                "",
+                "",
+                "",
+                "███    ██ ███████  ██████  ██    ██ ██ ███    ███ ",
+                "████   ██ ██      ██    ██ ██    ██ ██ ████  ████ ",
+                "██ ██  ██ █████   ██    ██ ██    ██ ██ ██ ████ ██ ",
+                "██  ██ ██ ██      ██    ██  ██  ██  ██ ██  ██  ██ ",
+                "██   ████ ███████  ██████    ████   ██ ██      ██ ",
                 "",
             }
 
             dashboard.section.buttons.val = {
-                dashboard.button("SPC r s", " Load Last Session", ":PossessionLoad<CR>"),
+                dashboard.button("SPC s l", " Load CWD Session", ":SLoadCwd<CR>"),
+                dashboard.button("SPC s r", " Load Last Session", ":PossessionLoad<CR>"),
                 dashboard.button("SPC s s", " List All Sessions", ":Telescope possession list<CR>"),
-                dashboard.button("SPC SPC", " Search Files", ":Telescope find_files<CR>"),
-                dashboard.button("SPC f s", " Search For Word", ":Telescope grep_string<CR>"),
-                dashboard.button("SPC f f", " File Explorer", ":Telescope file_browser<CR>"),
             }
 
             dashboard.section.header.opts.margin = 20
