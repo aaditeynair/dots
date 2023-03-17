@@ -65,6 +65,12 @@ remap("n", "<S-Down>", "<CMD>resize -2<CR>")
 remap("n", "<S-Left>", "<CMD>vertical resize +2<CR>")
 remap("n", "<S-Right>", "<CMD>vertical resize -2<CR>")
 
+-- win navigation
+remap("n", "<C-h>", "<C-w>h")
+remap("n", "<C-j>", "<C-w>j")
+remap("n", "<C-k>", "<C-w>k")
+remap("n", "<C-l>", "<C-w>l")
+
 -- tabs
 remap("n", "<leader>to", "<CMD>tabnew<CR>")
 remap("n", "<leader>tx", "<CMD>tabclose<CR>")
@@ -72,8 +78,8 @@ remap("n", "<leader>h", "gT")
 remap("n", "<leader>l", "gt")
 
 -- buffers navigation
-remap("n", "<A-j>", "<CMD>bnext<CR>")
-remap("n", "<A-k>", "<CMD>bprev<CR>")
+remap({ "n", "t" }, "<A-j>", "<CMD>bnext<CR>")
+remap({ "n", "t" }, "<A-k>", "<CMD>bprev<CR>")
 
 -- telescope
 remap("n", "<leader><leader>", "<CMD>Telescope find_files<CR>")
