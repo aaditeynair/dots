@@ -97,3 +97,6 @@ remap("n", "<right>", "<nop>")
 remap("n", "<leader>xx", "<CMD>TroubleToggle<CR>")
 remap("n", "<leader>xw", "<CMD>TroubleToggle workspace_diagnostics<CR>")
 remap("n", "<leader>xd", "<CMD>TroubleToggle document_diagnostics<CR>")
+
+-- terminals
+remap("n", "<leader>b", "<CMD>TermOpen<CR>")
