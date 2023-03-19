@@ -107,6 +107,6 @@ remap("n", "<leader>xd", "<CMD>TroubleToggle document_diagnostics<CR>")
 -- terminals
 remap("n", "<leader>b", function()
     vim.ui.input({ prompt = "Enter the terminal name: " }, function(name)
-        require("termnames").create_terminal(name)
+        require("termnames").create_terminal(name ~= nil and name or "")
     end)
 end)
