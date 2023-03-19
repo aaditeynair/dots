@@ -74,4 +74,16 @@ return {
     },
 
     { "nvim-tree/nvim-web-devicons" },
+
+    {
+        "rcarriga/nvim-notify",
+        event = "VeryLazy",
+        config = function()
+            require("notify").setup({
+                background_colour = "#000000",
+                stages = "fade",
+            })
+            vim.notify = require("notify")
+        end,
+    },
 }
