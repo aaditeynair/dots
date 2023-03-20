@@ -122,6 +122,9 @@ return {
             definition = {
                 edit = "<CR>",
             },
+            diagnostic = {
+                on_insert = false,
+            },
             -- keybinds for navigation in lspsaga window
             move_in_saga = { prev = "<C-k>", next = "<C-j>" },
         },
@@ -187,7 +190,7 @@ return {
 
             vim.api.nvim_create_user_command("ToggleFormatOnSave", function()
                 format_on_save = not format_on_save
-                print("Format on save is turned " .. ( format_on_save and "on" or "off" ))
+                print("Format on save is turned " .. (format_on_save and "on" or "off"))
             end, { nargs = 0 })
         end,
     },
