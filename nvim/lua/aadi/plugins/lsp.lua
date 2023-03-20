@@ -125,8 +125,9 @@ return {
             diagnostic = {
                 on_insert = false,
             },
-            -- keybinds for navigation in lspsaga window
-            move_in_saga = { prev = "<C-k>", next = "<C-j>" },
+            rename = {
+                quit = "<ESC>",
+            },
         },
     },
 
