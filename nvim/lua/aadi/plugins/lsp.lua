@@ -171,6 +171,7 @@ return {
                 sources = {
                     nls.builtins.formatting.black,
                     nls.builtins.formatting.prettier,
+                    nls.builtins.formatting.markdownlint,
                     nls.builtins.formatting.stylua.with({ extra_args = { "--indent-type", "Spaces" } }),
                 },
                 on_attach = function(current_client, bufnr)
