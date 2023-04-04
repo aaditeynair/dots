@@ -28,10 +28,10 @@ return {
             vim.keymap.set("n", "<A-t>", function()
                 ui.nav_file(2)
             end)
-            vim.keymap.set("n", "<A-n>", function()
+            vim.keymap.set("n", "<A-m>", function()
                 ui.nav_file(3)
             end)
-            vim.keymap.set("n", "<A-s>", function()
+            vim.keymap.set("n", "<A-l>", function()
                 ui.nav_file(4)
             end)
         end,
@@ -231,7 +231,7 @@ return {
                 icon = "",
                 draw = function()
                     local marks = harpoon.get_mark_config().marks
-                    local keymaps = { "H ", "T ", "N ", "S " }
+                    local keymaps = { "H ", "T ", "M ", "L " }
                     local lines = {}
 
                     for idx = 1, #marks do
