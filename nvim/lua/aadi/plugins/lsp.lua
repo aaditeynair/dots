@@ -162,7 +162,7 @@ return {
 
             vim.api.nvim_create_user_command("ToggleFormatOnSave", function()
                 format_on_save = not format_on_save
-                print("Format on save is turned " .. (format_on_save and "on" or "off"))
+                vim.notify("Format on save is turned " .. (format_on_save and "on" or "off"))
             end, { nargs = 0 })
         end,
     },
