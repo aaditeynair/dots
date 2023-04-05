@@ -42,22 +42,13 @@ return {
             local capabilities = vim.lsp.protocol.make_client_capabilities()
             capabilities = cmp_nvim_lsp.default_capabilities()
 
-            lspconfig["html"].setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            -- configure css server
-            lspconfig["cssls"].setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            -- configure tailwindcss server
-            lspconfig["tailwindcss"].setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
+            local get_servers = require("mason-lspconfig").get_installed_servers
+            for _, server_name in ipairs(get_servers()) do
+                lspconfig[server_name].setup({
+                    capabilities = capabilities,
+                    on_attach = on_attach,
+                })
+            end
 
             -- configure lua server (with special settings)
             lspconfig["lua_ls"].setup({
@@ -78,36 +69,6 @@ return {
                         },
                     },
                 },
-            })
-
-            lspconfig["astro"].setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            lspconfig["tsserver"].setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            lspconfig["pyright"].setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            lspconfig["eslint"].setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            lspconfig["bashls"].setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            lspconfig["marksman"].setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
             })
         end,
     },
@@ -153,7 +114,9 @@ return {
                     "pyright",
                     "bashls",
                     "eslint",
+                    "gopls",
                     "marksman",
+                    "vimls",
                 },
             })
         end,
@@ -172,6 +135,7 @@ return {
                     nls.builtins.formatting.black,
                     nls.builtins.formatting.prettier,
                     nls.builtins.formatting.markdownlint,
+                    nls.builtins.formatting.gofmt,
                     nls.builtins.formatting.stylua.with({ extra_args = { "--indent-type", "Spaces" } }),
                 },
                 on_attach = function(current_client, bufnr)
