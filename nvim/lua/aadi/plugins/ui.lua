@@ -53,7 +53,7 @@ return {
     {
         "lukas-reineke/indent-blankline.nvim",
         event = "BufReadPre",
-        config = {
+        opts = {
             char = "▏",
         },
     },
