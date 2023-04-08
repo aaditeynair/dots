@@ -7,9 +7,9 @@ return {
             vim.g.gruvbox_transparent = true
             vim.api.nvim_command("colorscheme gruvbox-flat")
 
-            for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
-                vim.api.nvim_set_hl(0, group, {})
-            end
+            -- for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+            --     vim.api.nvim_set_hl(0, group, {})
+            -- end
 
             vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
             vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
