@@ -17,3 +17,12 @@ vim.api.nvim_create_autocmd("TermOpen", {
         })
     end,
 })
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+    desc = "change stuff for colorschemes",
+    callback = function()
+        for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+            vim.api.nvim_set_hl(0, group, {})
+        end
+    end,
+})
