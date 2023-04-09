@@ -179,25 +179,26 @@ return {
                 icon = "",
                 draw = function()
                     local lines = {}
-                    local ls_cmd_output = vim.fn.execute("ls")
                     local cwd = vim.fn.getcwd() .. "/"
-                    local current_buf = vim.api.nvim_buf_get_name(0):gsub("-", ""):gsub(cwd:gsub("-", ""), "")
 
-                    for buf in string.gmatch(ls_cmd_output, '"%S+"') do
-                        local buf_name = buf:gsub('"', ""):gsub(cwd:gsub("/home/aadi", "~"), "")
-
-                        if buf_name:find("^term://") ~= nil then
+                    local all_buffers = vim.fn.getbufinfo()
+                    for _, buf in ipairs(all_buffers) do
+                        if buf.name:find("^term://") ~= nil or buf.name == "" then
                             goto continue
                         end
 
-                        if buf_name == current_buf then
-                            table.insert(lines, "> " .. buf_name)
-                        else
-                            table.insert(lines, "  " .. buf_name)
+                        if buf.listed == 1 then
+                            local buf_name = vim.fn.substitute(buf.name, "^" .. vim.fn.escape(cwd, "/-"), "", "")
+                            if buf.name == vim.api.nvim_buf_get_name(0) then
+                                table.insert(lines, "> " .. buf_name)
+                            else
+                                table.insert(lines, "  " .. buf_name)
+                            end
                         end
 
                         ::continue::
                     end
+
                     return {
                         lines = lines,
                     }
