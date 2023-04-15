@@ -105,8 +105,9 @@ remap("n", "<leader>xw", "<CMD>TroubleToggle workspace_diagnostics<CR>")
 remap("n", "<leader>xd", "<CMD>TroubleToggle document_diagnostics<CR>")
 
 -- terminals
-remap("n", "<leader>b", function()
+remap("n", "<leader>bo", function()
     vim.ui.input({ prompt = "Enter the terminal name: " }, function(name)
         require("termnames").create_terminal(name ~= nil and name or "")
     end)
 end)
+remap("n", "<leader>bg", "<CMD>TermOpen git<CR>")
