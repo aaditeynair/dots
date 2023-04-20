@@ -1,21 +1,21 @@
 import:
-  - /home/aadi/.config/alacritty/themes/gruvbox.yaml
+  - /home/aadi/.config/alacritty/themes/dawnfox.yml
 
 font:
   normal:
-    family: FiraCode NF
+    family: JetBrainsMono  NF
     style: Regular
 
   bold:
-    family: FiraCode NF
+    family: JetBrainsMono NF
     style: Bold
 
   italic:
-    family: FiraCode NF
+    family: JetBrainsMono NF
     style: Italic
 
   bold_italic:
-    family: FiraCode NF
+    family: JetBrainsMono NF
     style: Bold Italic
 
   size: 8
@@ -24,4 +24,3 @@ window:
   padding:
     x: 10
     y: 10
-  opacity: 0

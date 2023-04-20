@@ -2,12 +2,12 @@ from libqtile import layout
 from libqtile.config import Match
 
 layouts = [
-    layout.Max(margin=12, border_width=0, border_focus="#604434"),
+    layout.Max(margin=12, border_width=3, border_focus="#000"),
     layout.Columns(
         margin=12,
-        border_width=2,
-        border_focus="#604434",
-        border_normal="#1d2021",
+        border_width=3,
+        border_focus="#000",
+        border_normal="#000",
         border_on_single=True,
     ),
     # Try more layouts by unleashing below layouts.
@@ -24,9 +24,9 @@ layouts = [
 ]
 
 floating_layout = layout.Floating(
-    border_width=2,
-    border_focus="#604434",
-    border_normal="#1d2021",
+    border_width=3,
+    border_focus="#000",
+    border_normal="#000",
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
