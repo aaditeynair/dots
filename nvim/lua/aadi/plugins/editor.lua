@@ -101,7 +101,6 @@ return {
                     return data
                 end,
                 after_load = function(_, _)
-                    require("sidebar-nvim").open()
                     vim.cmd("TermRefresh")
                 end,
             },
@@ -249,7 +248,7 @@ return {
                 end,
             }
 
-            vim.api.nvim_set_hl(0, "SidebarNvimSectionTitle", { fg = "#f9f5d7" })
+            -- vim.api.nvim_set_hl(0, "SidebarNvimSectionTitle", { fg = "#f9f5d7" })
 
             require("sidebar-nvim").setup({
                 sections = { base_info, tabs, buffers, terms, harpoon_marks },
@@ -299,6 +298,31 @@ return {
         cmd = "TroubleToggle",
         opts = {
             auto_preview = false,
+        },
+    },
+
+    {
+        dir = "~/projects/conduct.nvim",
+        event = "VeryLazy",
+        opts = {
+            functions = {
+                run = function()
+                    local termname = require("termnames")
+
+                    if not termname.terminal_exists("server") then
+                        termname.create_terminal("server")
+                    end
+
+                    termname.run_terminal_cmd({ "server", "exa -al" })
+                end,
+            },
+            presets = {
+                node = {
+                    keybinds = {
+                        ["<leader>hi"] = "TermOpen control ls ${flags}",
+                    },
+                },
+            },
         },
     },
 }

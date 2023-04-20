@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
             silent = true,
             buffer = 0,
         })
-        vim.cmd("startinsert")
+        -- vim.cmd("startinsert")
     end,
 })
 

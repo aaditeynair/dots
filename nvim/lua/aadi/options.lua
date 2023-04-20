@@ -28,7 +28,7 @@ opt.incsearch = true
 opt.scrolloff = 8
 
 opt.termguicolors = true
-opt.background = "dark"
+opt.background = "light"
 opt.signcolumn = "yes"
 
 opt.backspace = "indent,eol,start"
