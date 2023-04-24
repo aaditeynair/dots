@@ -323,6 +323,19 @@ return {
                     },
                 },
             },
+            after_load_function = function()
+                local cwd = vim.fn.getcwd()
+                local sessions = require("possession.session").list()
+                local current_session = require("possession.session").session_name
+                for _, session in pairs(sessions) do
+                    if cwd == session.cwd then
+                        if session.name ~= current_session then
+                            require("possession.session").load(session.name)
+                        end
+                        break
+                    end
+                end
+            end,
         },
     },
 }
