@@ -4,7 +4,7 @@ from libqtile.widget import GroupBox, Clock, Spacer
 
 screens = [
     Screen(
-        wallpaper="/home/aadi/.config/qtile/assets/wallpaper.jpg",
+        wallpaper="/home/aadi/.config/qtile/assets/lines.jpg",
         wallpaper_mode="fill",
         top=Bar(
             [
