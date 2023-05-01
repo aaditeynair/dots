@@ -47,3 +47,5 @@ opt.fillchars = { eob = " " }
 opt.laststatus = 0
 opt.showtabline = 0
 opt.cmdheight = 0
+
+opt.mouse = ""

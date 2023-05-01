@@ -81,6 +81,7 @@ return {
             silent = true,
             autosave = {
                 current = true,
+                on_load = false,
                 on_quit = true,
             },
             plugins = {
@@ -153,22 +154,16 @@ return {
                         end
                     end
 
+                    -- Project Stuff
+                    local current_project = require("conduct").current_project.name
+                    if current_project ~= nil then
+                        table.insert(lines, "project: " .. current_project)
+                        local current_session = require("conduct").current_session
+                        table.insert(lines, "session: " .. current_session)
+                    end
+
                     return {
                         lines = lines,
-                    }
-                end,
-            }
-
-            local tabs = {
-                title = "Tabs",
-                icon = "",
-                draw = function()
-                    local tab_lines = {
-                        "current tab: " .. vim.api.nvim_get_current_tabpage(),
-                        "number of tabs: " .. #vim.api.nvim_list_tabpages(),
-                    }
-                    return {
-                        lines = tab_lines,
                     }
                 end,
             }
@@ -251,7 +246,7 @@ return {
             -- vim.api.nvim_set_hl(0, "SidebarNvimSectionTitle", { fg = "#f9f5d7" })
 
             require("sidebar-nvim").setup({
-                sections = { base_info, tabs, buffers, terms, harpoon_marks },
+                sections = { base_info, buffers, terms, harpoon_marks },
                 update_interval = 0,
                 hide_statusline = true,
             })
@@ -323,19 +318,18 @@ return {
                     },
                 },
             },
-            after_load_function = function()
-                local cwd = vim.fn.getcwd()
-                local sessions = require("possession.session").list()
-                local current_session = require("possession.session").session_name
-                for _, session in pairs(sessions) do
-                    if cwd == session.cwd then
-                        if session.name ~= current_session then
-                            require("possession.session").load(session.name)
-                        end
-                        break
-                    end
-                end
-            end,
+            hooks = {
+                before_session_save = function()
+                    require("sidebar-nvim").close()
+                    require("termnames").save_terminal_data()
+                end,
+                before_session_load = function()
+                    vim.cmd("%bwipeout!")
+                end,
+                after_session_load = function()
+                    require("termnames").update_term_bufnr()
+                end,
+            },
         },
     },
 }

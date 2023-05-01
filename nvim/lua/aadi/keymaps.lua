@@ -12,6 +12,10 @@ remap({ "n", "i" }, "<ESC>", function()
     vim.cmd.echo()
 end)
 
+-- insert mode
+remap("i", "<A-e>", "<ESC>A")
+remap("i", "<A-a>", "<ESC>I")
+
 -- misc
 remap("n", "<leader>z", "<CMD>ZenMode<CR>")
 remap("n", "<leader>q", "<CMD>Bdelete<CR>")
@@ -88,6 +92,7 @@ remap("n", "<leader>fc", "<CMD>Telescope grep_string<CR>")
 remap("n", "<leader>fb", "<CMD>Telescope buffers<CR>")
 remap("n", "<leader>fh", "<CMD>Telescope help_tags<CR>")
 remap("n", "<leader>ff", "<CMD>Telescope file_browser<CR>")
+remap("n", "<leader>fl", "<CMD>Telescope lsp_document_symbols<CR>")
 
 -- identing something
 remap("v", "<", "<gv")

@@ -6,19 +6,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
-vim.api.nvim_create_autocmd("TermOpen", {
-    desc = "Set local options for terminal buffers",
-    pattern = "*",
-    callback = function()
-        vim.cmd("setlocal nonumber norelativenumber")
-        vim.keymap.set("n", "<leader>q", "<CMD>Bdelete!<CR>", {
-            silent = true,
-            buffer = 0,
-        })
-        -- vim.cmd("startinsert")
-    end,
-})
-
 vim.api.nvim_create_autocmd("BufEnter", {
     desc = "enter insert mode",
     pattern = "term://*",
