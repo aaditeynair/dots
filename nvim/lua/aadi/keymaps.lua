@@ -119,5 +119,5 @@ end)
 remap("n", "<leader>bg", "<CMD>TermOpen git<CR>")
 
 -- projects
-remap("n", "<leader>pp", "<CMD>Telescope conduct projects")
-remap("n", "<leader>ps", "<CMD>Telescope conduct sessions")
+remap("n", "<leader>pp", "<CMD>Telescope conduct projects<CR>")
+remap("n", "<leader>ps", "<CMD>Telescope conduct sessions<CR>")
