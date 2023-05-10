@@ -45,7 +45,6 @@ return {
 
             require("neo-tree").setup({
                 close_if_last_window = true,
-                enable_git_status = false,
                 default_component_configs = {
                     indent = {
                         with_expanders = true,
@@ -297,8 +296,21 @@ return {
     },
 
     {
-        dir = "~/projects/conduct.nvim",
-        event = "VeryLazy",
+        "aaditeynair/conduct.nvim",
+        dependencies = "nvim-lua/plenary.nvim",
+        cmd = {
+            "ConductNewProject",
+            "ConductLoadProject",
+            "ConductLoadLastProject",
+            "ConductLoadProjectConfig",
+            "ConductReloadProjectConfig",
+            "ConductDeleteProject",
+            "ConductRenameProject",
+            "ConductProjectNewSession",
+            "ConductProjectLoadSession",
+            "ConductProjectDeleteSession",
+            "ConductProjectRenameSession",
+        },
         opts = {
             functions = {
                 run = function()

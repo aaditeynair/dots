@@ -19,6 +19,7 @@ remap("i", "<A-a>", "<ESC>I")
 -- misc
 remap("n", "<leader>z", "<CMD>ZenMode<CR>")
 remap("n", "<leader>q", "<CMD>Bdelete<CR>")
+remap("n", "Y", "0y$")
 
 -- sidebar toggles
 remap("n", "<leader>w", function()
@@ -116,3 +117,7 @@ remap("n", "<leader>bo", function()
     end)
 end)
 remap("n", "<leader>bg", "<CMD>TermOpen git<CR>")
+
+-- projects
+remap("n", "<leader>pp", "<CMD>Telescope conduct projects")
+remap("n", "<leader>ps", "<CMD>Telescope conduct sessions")
