@@ -166,4 +166,9 @@ return {
             vim.notify = require("notify")
         end,
     },
+
+    {
+        "declancm/maximize.nvim",
+        opts = { default_keymaps = false },
+    },
 }

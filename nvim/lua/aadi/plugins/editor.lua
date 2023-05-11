@@ -74,40 +74,6 @@ return {
     },
 
     {
-        "jedrzejboczar/possession.nvim",
-        cmd = { "PossessionLoad", "PossessionSave", "PossessionDelete" },
-        opts = {
-            silent = true,
-            autosave = {
-                current = true,
-                on_load = false,
-                on_quit = true,
-            },
-            plugins = {
-                nvim_tree = false,
-                tabby = false,
-                delete_hidden_buffers = {
-                    hooks = {},
-                    force = false,
-                },
-            },
-            hooks = {
-                before_save = function(_)
-                    require("sidebar-nvim").close()
-                    return {}
-                end,
-                before_load = function(_, data)
-                    vim.cmd("%bwipeout!")
-                    return data
-                end,
-                after_load = function(_, _)
-                    vim.cmd("TermRefresh")
-                end,
-            },
-        },
-    },
-
-    {
         "sidebar-nvim/sidebar.nvim",
         cmd = { "SidebarNvimToggle", "SidebarNvimClose" },
         config = function()

@@ -6,6 +6,5 @@ vim.api.nvim_create_autocmd("User", {
     callback = function()
         require("aadi.keymaps")
         require("aadi.autocmds")
-        require("aadi.utils")
     end,
 })
