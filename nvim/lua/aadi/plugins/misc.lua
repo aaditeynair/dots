@@ -21,4 +21,5 @@ return {
 
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
+    { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
 }

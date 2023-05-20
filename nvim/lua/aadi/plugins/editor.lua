@@ -302,7 +302,7 @@ return {
                     require("termnames").save_terminal_data()
                 end,
                 before_session_load = function()
-                    vim.cmd("%bwipeout!")
+                    vim.cmd("silent %bwipeout!")
                 end,
                 after_session_load = function()
                     require("termnames").update_term_bufnr()
