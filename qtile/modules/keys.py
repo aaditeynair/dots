@@ -76,5 +76,5 @@ keys = [
     Key([mod, "shift"], "s", lazy.window.togroup("Terminal")),
     Key([mod, "shift"], "d", lazy.window.togroup("Neovim")),
     Key([mod, "shift"], "f", lazy.window.togroup("Music")),
-    Key([mod], "o", lazy.spawn(os.path.expanduser("~/bin/time.sh"))),
+    Key([mod], "o", lazy.spawn(os.path.expanduser("~/bin/p"))),
 ]

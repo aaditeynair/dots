@@ -1,0 +1,10 @@
+# /home/aadi/.config/tmuxinator/conduct_nvim.yml
+
+name: conduct_nvim
+root: ~/projects/conduct.nvim
+
+windows:
+  - editor:
+      layout: e98c,183x42,0,0{71x42,0,0[71x21,0,0,6,71x20,0,22,8],111x42,72,0,7}
+      panes:
+        - nvim -c "ConductLoadProject conduct.nvim"
