@@ -25,6 +25,7 @@ return {
                     "lua",
                     "python",
                     "typescript",
+                    "yuck",
                 },
                 auto_install = true,
             })

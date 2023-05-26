@@ -1,0 +1,91 @@
+;; Variables
+(defpoll weather :interval "10m" `curl "https://wttr.in/Trivandrum?format=j1"`)
+
+(defpoll time :interval "10s" `date +'%I:%M %p'`)
+(defpoll date :interval "10s" `date +'%d %b, %A'`)
+
+(defpoll title :interval "10s" `playerctl metadata --format '{{ title }}'`)
+(defpoll artist :interval "10s" `playerctl metadata --format '{{ artist }}'`)
+
+(defpoll volume :interval "30s" `awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master)`)
+(defpoll net :interval "100s" `nmcli -t -f SIGNAL,ACTIVE device wifi | awk -F':' '{if($2=="yes")print$1}'`)
+
+;; Widgets
+(defwidget weather []
+    (box :class "weather" :spacing 0 :space-evenly false :orientation "h" :valign "center"
+        (box :spacing 0 :space-evenly false :orientation "v" :valign "center" :halign "start"
+            (label :halign "start" :text "${weather.nearest_area[0].areaName[0].value}")
+            (label :class "condition" :halign "start" :text "${weather.current_condition[0].weatherDesc[0].value}"))
+        (label :class "temp" :halign "end" :hexpand true :text "${weather.current_condition[0].temp_C}° C")))
+
+(defwidget clock []
+    (box :class "clock" :orientation "v" :spacing 0 :space-evenly false :valign "center"
+        (label :text time :halign "start")
+        (label :text date :halign "start")))
+
+(defwidget music []
+    (box :class "music" :orientation "v" :spacing 0 :space-evenly false :valign "center"
+        (label :limit-width 35 :text title :halign "start")
+        (label :text artist :halign "start")))
+
+(defwidget system [status]
+    (box :class "system" :orientation "h" :space-evenly false :spacing 25 :valign "center" :vexpand true :hexpand true
+        (label :hexpand true :halign "start" :text "  ${status}%")
+        (label :hexpand true :halign "center" :text "  ${volume}")
+        (label :hexpand true :halign "end" :text '  ${net == "" ? "offline" :
+            net < 26 ? "slow" :
+                net < 51 ? "okay" :
+                    net < 76 ? "good" : "excellent"}')))
+
+;; Windows
+(defwindow weather
+    :monitor 0
+    :geometry (geometry :x "24px"
+                        :y "-24px"
+                        :width "250"
+                        :height "64px"
+                        :anchor "bottom left")
+    :stacking "fg"
+    :reserve (struts :distance "100px" :side "bottom")
+    :windowtype "dock"
+    :wm-ignore false
+(weather))
+
+(defwindow music
+    :monitor 0
+    :geometry (geometry :x "298px"
+                        :y "-24px"
+                        :width "350"
+                        :height "64px"
+                        :anchor "bottom left")
+    :stacking "fg"
+    :reserve (struts :distance "100px" :side "bottom")
+    :windowtype "dock"
+    :wm-ignore false
+(music))
+
+(defwindow system
+    :monitor 0
+    :geometry (geometry :x "1372px"
+                        :y "-24px"
+                        :width "300"
+                        :height "64px"
+                        :anchor "bottom left")
+    :stacking "fg"
+    :reserve (struts :distance "100px" :side "bottom")
+    :windowtype "dock"
+    :wm-ignore false
+(system :status {EWW_BATTERY.BAT0.capacity}))
+
+(defwindow clock
+    :monitor 0
+    :geometry (geometry :x "1696px"
+                        :y "-24px"
+                        :width "200"
+                        :height "64px"
+                        :anchor "bottom left")
+    :stacking "fg"
+    :reserve (struts :distance "100px" :side "bottom")
+    :windowtype "dock"
+    :wm-ignore false
+(clock))

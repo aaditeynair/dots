@@ -2,10 +2,10 @@ from libqtile import layout
 from libqtile.config import Match
 
 layouts = [
-    layout.Max(margin=12, border_width=3, border_focus="#000"),
+    layout.Max(margin=12, border_width=0, border_focus="#000"),
     layout.Columns(
         margin=12,
-        border_width=3,
+        border_width=0,
         border_focus="#000",
         border_normal="#000",
         border_on_single=True,
@@ -24,7 +24,7 @@ layouts = [
 ]
 
 floating_layout = layout.Floating(
-    border_width=3,
+    border_width=0,
     border_focus="#000",
     border_normal="#000",
     float_rules=[

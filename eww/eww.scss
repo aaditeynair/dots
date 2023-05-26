@@ -1,0 +1,30 @@
+$background-black: #1f1f28;
+
+* {
+  all: unset;
+  font-family: JetBrains Mono NF;
+}
+
+.weather,
+.clock,
+.music {
+  background: rgba($background-black, 1);
+  color: #fff;
+  font-size: 1.05rem;
+  padding: 0 12px;
+}
+
+.condition {
+  font-size: 0.9rem;
+}
+
+.temp {
+  font-size: 1.3rem;
+}
+
+.system {
+  background: rgba($background-black, 1);
+  color: #fff;
+  font-size: 1.05rem;
+  padding: 0 20px;
+}
