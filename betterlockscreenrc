@@ -14,8 +14,8 @@ quiet=false
 # i3lockcolor_bin="i3lock-color" # Manually set command for i3lock-color
 
 # default theme
-loginbox=ffffffff
-loginshadow=00000000
+loginbox=1f1f28ff
+loginshadow=000000ff
 locktext="Enter the password..."
 font="JetBrainsMono NF"
 ringcolor=ffffffff
@@ -25,10 +25,10 @@ ringvercolor=618774ff
 insidevercolor=00000000
 ringwrongcolor=000000ff
 insidewrongcolor=618774ff
-timecolor=000000ff
+timecolor=ffffffff
 time_format="%I:%M"
-greetercolor=000000ff
-layoutcolor=000000ff
+greetercolor=ffffffff
+layoutcolor=ffffffff
 keyhlcolor=618774ff
 bshlcolor=000000ff
 verifcolor=000000ff
