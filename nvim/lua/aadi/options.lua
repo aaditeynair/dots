@@ -25,7 +25,7 @@ opt.smartcase = true
 opt.hlsearch = false
 opt.incsearch = true
 
-opt.scrolloff = 99
+opt.scrolloff = 8
 
 opt.termguicolors = true
 opt.signcolumn = "yes"

@@ -125,7 +125,7 @@ element {
     padding:                     18px 0;
     border-radius:               10px;
     background-color:            @urgent;
-    text-color:                  @background-alt;
+    text-color:                  @background;
     cursor:                      pointer;
 }
 element-text {
@@ -138,5 +138,5 @@ element-text {
 }
 element selected.normal {
     background-color:            @selected;
-    text-color:                  @background-alt;
+    text-color:                  @background;
 }
