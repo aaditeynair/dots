@@ -26,8 +26,8 @@ window:
     y: 10
 colors:
   primary:
-    background: '0xf2ecbc'
-    foreground: '0x1F1F28'
+    background: '0x1f1f28'
+    foreground: '0xdcd7ba'
 
   normal:
     black: '0x090618'
