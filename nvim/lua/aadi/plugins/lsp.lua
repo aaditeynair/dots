@@ -108,17 +108,17 @@ return {
             require("mason-lspconfig").setup({
                 automatic_installation = true,
                 ensure_installed = {
-                    "html",
-                    "cssls",
-                    "tailwindcss",
-                    "lua_ls",
                     "astro",
-                    "tsserver",
-                    "pyright",
                     "bashls",
+                    "cssls",
                     "eslint",
                     "gopls",
+                    "html",
+                    "lua_ls",
                     "marksman",
+                    "pyright",
+                    "tailwindcss",
+                    "tsserver",
                     "vimls",
                 },
             })
@@ -127,6 +127,7 @@ return {
 
     {
         "jose-elias-alvarez/null-ls.nvim",
+        dependencies = "jay-babu/mason-null-ls.nvim",
         config = function()
             local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
             local nls = require("null-ls")
@@ -158,13 +159,18 @@ return {
                                             return client.name == "null-ls"
                                         end,
                                         bufnr = bufnr,
-                                        timeout_ms = 2000,
+                                        timeout_ms = 5000,
                                     })
                                 end
                             end,
                         })
                     end
                 end,
+            })
+
+            require("mason-null-ls").setup({
+                ensure_installed = nil,
+                automatic_installation = true,
             })
 
             vim.api.nvim_create_user_command("ToggleFormatOnSave", function()

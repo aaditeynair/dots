@@ -29,8 +29,8 @@ groups = [
             ),
         ],
     ),
-    Group("Web"),
+    Group("Web", layout="columns"),
     Group("Terminal", layout="columns"),
-    Group("Neovim"),
+    Group("Neovim", layout="columns"),
     Group("Music"),
 ]
