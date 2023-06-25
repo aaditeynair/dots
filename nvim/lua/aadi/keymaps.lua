@@ -7,19 +7,24 @@ remap("i", "jk", "<ESC>")
 remap("t", "jk", "<C-\\><C-n>")
 
 -- remove any clutter
-remap({ "n", "i" }, "<ESC>", function()
-    vim.cmd.nohl()
-    vim.cmd.echo()
-end)
+-- remap({ "n", "i" }, "<ESC>", function()
+--     vim.cmd.nohl()
+--     vim.cmd.echo()
+-- end)
 
 -- insert mode
 remap("i", "<A-e>", "<ESC>A")
 remap("i", "<A-a>", "<ESC>I")
 
--- misc
+-- zenmode
 remap("n", "<leader>z", "<CMD>ZenMode<CR>")
-remap("n", "<leader>q", "<CMD>Bdelete<CR>")
+
+-- yank shortcuts
 remap("n", "Y", "0y$")
+remap("n", "F", "ggyG<C-o>")
+
+-- misc
+remap("n", "<CR>", "ciw")
 
 -- sidebar toggles
 remap("n", "<leader>w", function()
@@ -72,9 +77,10 @@ remap("n", "<leader>tx", "<CMD>tabclose<CR>")
 remap("n", "<leader>h", "gT")
 remap("n", "<leader>l", "gt")
 
--- buffers navigation
+-- buffers
 remap({ "n", "t" }, "<A-j>", "<CMD>bnext<CR>")
 remap({ "n", "t" }, "<A-k>", "<CMD>bprev<CR>")
+remap("n", "<leader>q", "<CMD>Bdelete<CR>")
 
 -- telescope
 remap("n", "<leader><leader>", "<CMD>Telescope find_files<CR>")
@@ -101,13 +107,42 @@ remap("n", "<leader>xw", "<CMD>TroubleToggle workspace_diagnostics<CR>")
 remap("n", "<leader>xd", "<CMD>TroubleToggle document_diagnostics<CR>")
 
 -- terminals
-remap("n", "<leader>bo", function()
-    vim.ui.input({ prompt = "Enter the terminal name: " }, function(name)
-        require("termnames").create_terminal(name ~= nil and name or "")
-    end)
-end)
-remap("n", "<leader>bg", "<CMD>TermOpen git<CR>")
+-- remap("n", "<leader>bo", function()
+--     vim.ui.input({ prompt = "Enter the terminal name: " }, function(name)
+--         require("termnames").create_terminal(name ~= nil and name or "")
+--     end)
+-- end)
+-- remap("n", "<leader>bg", "<CMD>TermOpen git<CR>")
 
 -- projects
 remap("n", "<leader>pp", "<CMD>Telescope conduct projects<CR>")
 remap("n", "<leader>ps", "<CMD>Telescope conduct sessions<CR>")
+
+-- harpoon
+
+remap("n", "<leader>a", function()
+    require("harpoon.mark").toggle_file()
+    require("sidebar-nvim").update()
+end)
+
+remap("n", "<A-e>", function()
+    require("harpoon.ui").toggle_quick_menu()
+end)
+
+remap("n", "<A-1>", function()
+    require("harpoon.ui").nav_file(1)
+end)
+remap("n", "<A-2>", function()
+    require("harpoon.ui").nav_file(2)
+end)
+remap("n", "<A-3>", function()
+    require("harpoon.ui").nav_file(3)
+end)
+remap("n", "<A-4>", function()
+    require("harpoon.ui").nav_file(4)
+end)
+
+-- flash
+remap({ "n", "x", "o" }, "S", function()
+    require("flash").jump()
+end)

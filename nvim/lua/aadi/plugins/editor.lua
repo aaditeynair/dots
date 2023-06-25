@@ -7,34 +7,6 @@ return {
 
     {
         "ThePrimeagen/harpoon",
-        event = "VeryLazy",
-
-        config = function()
-            local mark = require("harpoon.mark")
-            local ui = require("harpoon.ui")
-
-            vim.keymap.set("n", "<leader>a", function()
-                mark.toggle_file()
-                require("sidebar-nvim").update()
-            end)
-
-            vim.keymap.set("n", "<A-e>", function()
-                ui.toggle_quick_menu()
-            end)
-
-            vim.keymap.set("n", "<A-h>", function()
-                ui.nav_file(1)
-            end)
-            vim.keymap.set("n", "<A-t>", function()
-                ui.nav_file(2)
-            end)
-            vim.keymap.set("n", "<A-m>", function()
-                ui.nav_file(3)
-            end)
-            vim.keymap.set("n", "<A-l>", function()
-                ui.nav_file(4)
-            end)
-        end,
     },
 
     {
@@ -309,5 +281,11 @@ return {
                 end,
             },
         },
+    },
+
+    {
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        config = true,
     },
 }
