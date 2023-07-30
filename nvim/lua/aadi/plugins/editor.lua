@@ -286,6 +286,15 @@ return {
     {
         "folke/flash.nvim",
         event = "VeryLazy",
-        config = true,
+        opts = {
+            search = {
+                mode = "fuzzy",
+            },
+            modes = {
+                char = {
+                    enabled = false,
+                },
+            },
+        },
     },
 }

@@ -7,10 +7,10 @@ remap("i", "jk", "<ESC>")
 remap("t", "jk", "<C-\\><C-n>")
 
 -- remove any clutter
--- remap({ "n", "i" }, "<ESC>", function()
---     vim.cmd.nohl()
---     vim.cmd.echo()
--- end)
+remap({ "n", "i" }, "<ESC>", function()
+    vim.cmd.nohl()
+    vim.cmd.echo()
+end)
 
 -- insert mode
 remap("i", "<A-e>", "<ESC>A")
@@ -21,10 +21,13 @@ remap("n", "<leader>z", "<CMD>ZenMode<CR>")
 
 -- yank shortcuts
 remap("n", "Y", "0y$")
-remap("n", "F", "ggyG<C-o>")
+
+-- line positions
+remap("n", "H", "^")
+remap("n", "L", "$")
 
 -- misc
-remap("n", "<CR>", "ciw")
+-- remap("n", "<CR>", "ciw")
 
 -- sidebar toggles
 remap("n", "<leader>w", function()
@@ -74,8 +77,8 @@ remap("n", "<S-Right>", "<CMD>vertical resize -2<CR>")
 -- tabs
 remap("n", "<leader>to", "<CMD>tabnew<CR>")
 remap("n", "<leader>tx", "<CMD>tabclose<CR>")
-remap("n", "<leader>h", "gT")
-remap("n", "<leader>l", "gt")
+remap("n", "<leader>tn", "gt")
+remap("n", "<leader>tp", "gT")
 
 -- buffers
 remap({ "n", "t" }, "<A-j>", "<CMD>bnext<CR>")
@@ -140,9 +143,4 @@ remap("n", "<A-3>", function()
 end)
 remap("n", "<A-4>", function()
     require("harpoon.ui").nav_file(4)
-end)
-
--- flash
-remap({ "n", "x", "o" }, "S", function()
-    require("flash").jump()
 end)

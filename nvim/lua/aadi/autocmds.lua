@@ -14,6 +14,11 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end,
 })
 
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = "*.md",
+    callback = function() end,
+})
+
 vim.api.nvim_create_autocmd("ColorScheme", {
     desc = "change stuff for colorschemes",
     callback = function()
