@@ -43,9 +43,9 @@ keys = [
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 2%-")),
 
     # Individual Apps
-    # Key([mod], "backslash", lazy.spawn(f"betterlockscreen -l blur")),
     Key([mod], "Return", lazy.spawn("alacritty"), desc="Launch terminal"),
-    Key([], "Print", lazy.spawn("gnome-screenshot -a -i"), desc="Launch terminal"),
+    Key([], "Print", lazy.spawn("gnome-screenshot -a -i"), desc="Open screenshot app"),
+    Key([mod], "v", lazy.spawn("clipster -s"), desc="Open clipboard manager"),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),

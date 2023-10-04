@@ -91,7 +91,6 @@ remap("n", "<leader>fs", "<CMD>Telescope live_grep<CR>")
 remap("n", "<leader>fc", "<CMD>Telescope grep_string<CR>")
 remap("n", "<leader>fb", "<CMD>Telescope buffers<CR>")
 remap("n", "<leader>fh", "<CMD>Telescope help_tags<CR>")
-remap("n", "<leader>ff", "<CMD>Telescope file_browser<CR>")
 remap("n", "<leader>fl", "<CMD>Telescope lsp_document_symbols<CR>")
 
 -- identing something

@@ -3,6 +3,9 @@ return {
         "EdenEast/nightfox.nvim",
     },
     {
+        "shaunsingh/nord.nvim",
+    },
+    {
         "rebelot/kanagawa.nvim",
         lazy = false,
         priority = 1000,

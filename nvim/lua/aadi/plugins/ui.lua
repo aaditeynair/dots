@@ -134,8 +134,14 @@ return {
     {
         "lukas-reineke/indent-blankline.nvim",
         event = "BufReadPre",
+        main = "ibl",
         opts = {
-            char = "▏",
+            indent = {
+                char = "▏",
+            },
+            scope = {
+                enabled = false,
+            },
         },
     },
 
