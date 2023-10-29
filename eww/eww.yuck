@@ -59,7 +59,6 @@
                         :height "64px"
                         :anchor "bottom left")
     :stacking "fg"
-    :reserve (struts :distance "100px" :side "bottom")
     :windowtype "dock"
     :wm-ignore false
 (music))
@@ -72,7 +71,6 @@
                         :height "64px"
                         :anchor "bottom left")
     :stacking "fg"
-    :reserve (struts :distance "100px" :side "bottom")
     :windowtype "dock"
     :wm-ignore false
 (system :status {EWW_BATTERY.BAT0.capacity}))
@@ -85,7 +83,6 @@
                         :height "64px"
                         :anchor "bottom left")
     :stacking "fg"
-    :reserve (struts :distance "100px" :side "bottom")
     :windowtype "dock"
     :wm-ignore false
 (clock))

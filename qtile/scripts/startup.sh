@@ -2,7 +2,7 @@
 picom &
 dunst &
 
-EWW_BIN="/home/aadi/eww/target/release/eww"
+EWW_BIN="/home/aadi/dev/eww/target/release/eww"
 
 if [[ ! $(pidof eww) ]]; then
 	${EWW_BIN} daemon

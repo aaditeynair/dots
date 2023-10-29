@@ -48,6 +48,16 @@ return {
 				})
 			end
 
+			lspconfig["gopls"].setup({
+				settings = {
+					gopls = {
+						gofumpt = true,
+						completeUnimported = true,
+						usePlaceholders = true,
+					},
+				},
+			})
+
 			-- configure lua server (with special settings)
 			lspconfig["lua_ls"].setup({
 				capabilities = capabilities,
@@ -106,11 +116,14 @@ return {
 
 			require("mason-lspconfig").setup({
 				automatic_installation = true,
+			})
+
+			require("mason-tool-installer").setup({
 				ensure_installed = {
+					-- LSP Servers
 					"astro",
 					"bashls",
 					"cssls",
-					"eslint",
 					"gopls",
 					"html",
 					"lua_ls",
@@ -119,11 +132,7 @@ return {
 					"tailwindcss",
 					"tsserver",
 					"vimls",
-				},
-			})
 
-			require("mason-tool-installer").setup({
-				ensure_installed = {
 					-- Formatters
 					"prettier",
 					"shfmt",
@@ -131,11 +140,14 @@ return {
 					"isort",
 					"black",
 					"codespell",
+					"gofumpt",
+					"goimports-reviser",
 
 					-- Linters
 					"markdownlint",
 					"eslint_d",
 					"pylint",
+					"revive",
 				},
 			})
 		end,

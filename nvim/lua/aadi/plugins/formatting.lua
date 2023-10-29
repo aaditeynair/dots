@@ -8,6 +8,7 @@ return {
 			conform.setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
+					go = { "gofumt", "goimports-reviser" },
 					python = { "isort", "black" },
 					javascript = { "prettier" },
 					typescript = { "prettier" },
@@ -49,6 +50,7 @@ return {
 				typescriptreact = { "eslint_d" },
 				python = { "pylint" },
 				markdown = { "markdownlint" },
+				go = { "revive" },
 			}
 
 			local lint_augroup = vim.api.nvim_create_augroup("link", { clear = true })

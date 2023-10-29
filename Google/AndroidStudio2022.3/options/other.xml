@@ -1,0 +1,31 @@
+<application>
+  <component name="PropertyService"><![CDATA[{
+  "keyToString": {
+    "NonModalCommitCustomization.IsApplied": "true",
+    "SettingsSearchHistory": "q",
+    "android.sdk.path": "/home/aadi/Android/Sdk",
+    "ask.about.ctrl.y.shortcut.v2": "true",
+    "bundled.plugins.list.saved.version": "AI-223.8836.35.2231.10811636",
+    "fileTypeChangedCounter": "1",
+    "fontSizeToResetConsole": "13.0",
+    "fontSizeToResetEditor": "13.0",
+    "input.method.disabler.muted": "true",
+    "kotlin.lastUpdateCheck": "1697258136720",
+    "last_opened_file_path": "/home/aadi/dev/Android/Sdk",
+    "previousColorScheme": "_@user_Darcula",
+    "tasks.pass.word.conversion.enforced": "true"
+  },
+  "keyToStringList": {
+    "file.chooser.recent.files": [
+      "/home/aadi/dev/Android/Sdk"
+    ],
+    "fileTypeDetectors": [
+      "com.intellij.ide.scratch.ScratchFileServiceImpl$Detector",
+      "com.jetbrains.cidr.lang.OCHeaderFileTypeDetector",
+      "com.android.tools.idea.sqlite.fileType.SqliteFileTypeDetector",
+      "com.android.tools.idea.profilers.capture.MemoryCaptureFileType$Detector",
+      "org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector"
+    ]
+  }
+}]]></component>
+</application>
