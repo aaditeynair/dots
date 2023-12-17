@@ -1,5 +1,5 @@
 local function remap(mode, map, cmd)
-    vim.keymap.set(mode, map, cmd, { silent = true })
+	vim.keymap.set(mode, map, cmd, { silent = true })
 end
 
 -- easier keys to return to normal mode
@@ -8,31 +8,26 @@ remap("t", "jk", "<C-\\><C-n>")
 
 -- remove any clutter
 remap({ "n", "i" }, "<ESC>", function()
-    vim.cmd.nohl()
-    vim.cmd.echo()
+	vim.cmd.nohl()
+	vim.cmd.echo()
 end)
 
 -- insert mode
 remap("i", "<A-e>", "<ESC>A")
-remap("i", "<A-a>", "<ESC>I")
-
--- zenmode
-remap("n", "<leader>z", "<CMD>ZenMode<CR>")
+remap("i", "<A-s>", "<ESC>I")
 
 -- yank shortcuts
-remap("n", "Y", "0y$")
+remap("n", "<leader>yl", "0y$")
+remap("n", "<leader>yf", ":%y<CR>")
 
 -- line positions
 remap("n", "H", "^")
 remap("n", "L", "$")
 
--- misc
--- remap("n", "<CR>", "ciw")
-
 -- sidebar toggles
 remap("n", "<leader>w", function()
-    vim.cmd("Neotree close")
-    vim.cmd("SidebarNvimToggle")
+	vim.cmd("Neotree close")
+	vim.cmd("SidebarNvimToggle")
 end)
 remap("n", "<leader>e", "<CMD>Neotree focus reveal toggle<CR>")
 remap("n", "<leader>u", "<CMD>UndotreeToggle<CR>")
@@ -81,8 +76,8 @@ remap("n", "<leader>tn", "gt")
 remap("n", "<leader>tp", "gT")
 
 -- buffers
-remap({ "n", "t" }, "<A-j>", "<CMD>bnext<CR>")
-remap({ "n", "t" }, "<A-k>", "<CMD>bprev<CR>")
+remap({ "n", "t" }, "<leader>bn", "<CMD>bnext<CR>")
+remap({ "n", "t" }, "<leader>bp", "<CMD>bprev<CR>")
 remap("n", "<leader>q", "<CMD>Bdelete<CR>")
 
 -- telescope
@@ -93,7 +88,7 @@ remap("n", "<leader>fb", "<CMD>Telescope buffers<CR>")
 remap("n", "<leader>fh", "<CMD>Telescope help_tags<CR>")
 remap("n", "<leader>fl", "<CMD>Telescope lsp_document_symbols<CR>")
 
--- identing something
+-- indenting something
 remap("v", "<", "<gv")
 remap("v", ">", ">gv")
 
@@ -108,14 +103,6 @@ remap("n", "<leader>xx", "<CMD>TroubleToggle<CR>")
 remap("n", "<leader>xw", "<CMD>TroubleToggle workspace_diagnostics<CR>")
 remap("n", "<leader>xd", "<CMD>TroubleToggle document_diagnostics<CR>")
 
--- terminals
--- remap("n", "<leader>bo", function()
---     vim.ui.input({ prompt = "Enter the terminal name: " }, function(name)
---         require("termnames").create_terminal(name ~= nil and name or "")
---     end)
--- end)
--- remap("n", "<leader>bg", "<CMD>TermOpen git<CR>")
-
 -- projects
 remap("n", "<leader>pp", "<CMD>Telescope conduct projects<CR>")
 remap("n", "<leader>ps", "<CMD>Telescope conduct sessions<CR>")
@@ -123,23 +110,23 @@ remap("n", "<leader>ps", "<CMD>Telescope conduct sessions<CR>")
 -- harpoon
 
 remap("n", "<leader>a", function()
-    require("harpoon.mark").toggle_file()
-    require("sidebar-nvim").update()
+	require("harpoon.mark").toggle_file()
+	require("sidebar-nvim").update()
 end)
 
 remap("n", "<A-e>", function()
-    require("harpoon.ui").toggle_quick_menu()
+	require("harpoon.ui").toggle_quick_menu()
 end)
 
 remap("n", "<A-1>", function()
-    require("harpoon.ui").nav_file(1)
+	require("harpoon.ui").nav_file(1)
 end)
 remap("n", "<A-2>", function()
-    require("harpoon.ui").nav_file(2)
+	require("harpoon.ui").nav_file(2)
 end)
 remap("n", "<A-3>", function()
-    require("harpoon.ui").nav_file(3)
+	require("harpoon.ui").nav_file(3)
 end)
 remap("n", "<A-4>", function()
-    require("harpoon.ui").nav_file(4)
+	require("harpoon.ui").nav_file(4)
 end)

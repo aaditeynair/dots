@@ -1,4 +1,4 @@
-from libqtile.config import Group, ScratchPad, DropDown
+from libqtile.config import DropDown, Group, ScratchPad
 
 TERM_DROPDOWN = "alacritty --config-file /home/aadi/.config/alacritty/dropdown.yml "
 

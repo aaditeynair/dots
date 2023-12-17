@@ -2,6 +2,6 @@ theme-folder: ~/.config/alacritty/themes
 
 themes:
   - time: 08:00
-    name: kanagawa-light
+    name: kanagawa-dark
   - time: 18:00
     name: kanagawa-dark
