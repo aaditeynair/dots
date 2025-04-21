@@ -1,0 +1,29 @@
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 8
+
+[font.bold]
+family = "FiraCode NF"
+style = "Bold"
+
+[font.bold_italic]
+family = "FiraCode NF"
+style = "Bold Italic"
+
+[font.italic]
+family = "FiraCode NF"
+style = "Italic"
+
+[font.normal]
+family = "FiraCode NF"
+style = "Regular"
+
+[window.padding]
+x = 10
+y = 10
+
+[general]
+import = ["/home/aadi/.config/alacritty/themes/kanagawa-dark.toml"]
