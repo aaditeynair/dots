@@ -45,3 +45,9 @@ configstore/
 rclone/
 go/
 org.encroissant.app/
+darktable/
+activitywatch/
+glib-2.0/
+simple-update-notifier/
+sqlitebrowser/
+xfce4/

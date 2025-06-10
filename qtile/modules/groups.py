@@ -1,6 +1,6 @@
 from libqtile.config import DropDown, Group, ScratchPad
 
-TERM_DROPDOWN = "alacritty --config-file /home/aadi/.config/alacritty/dropdown.yml "
+TERM_DROPDOWN = "alacritty --config-file /home/aadi/.config/alacritty/dropdown.toml"
 
 groups = [
     ScratchPad(
@@ -11,7 +11,7 @@ groups = [
             ),
             DropDown(
                 "ranger",
-                TERM_DROPDOWN + "-e ranger",
+                TERM_DROPDOWN + " -e ranger",
                 opacity=1,
                 y=0.2,
                 height=0.5,
