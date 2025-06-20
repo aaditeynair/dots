@@ -39,6 +39,7 @@ keys = [
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +2%")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 2%-")),
+    Key(["control"], "XF86AudioPlay", lazy.spawn("pkill spotify")),
     # Individual Apps
     Key([mod], "Return", lazy.spawn("alacritty"), desc="Launch terminal"),
     Key([], "Print", lazy.spawn("gnome-screenshot -a -i"), desc="Open screenshot app"),
