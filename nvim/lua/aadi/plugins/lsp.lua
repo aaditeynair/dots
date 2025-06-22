@@ -130,7 +130,7 @@ return {
 					"marksman",
 					"pyright",
 					"tailwindcss",
-					"tsserver",
+					"typescript-language-server",
 					"vimls",
 
 					-- Formatters
